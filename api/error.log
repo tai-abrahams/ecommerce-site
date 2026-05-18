@@ -1,0 +1,57 @@
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"option tsl is not supportederror","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"querySrv ECONNREFUSED _mongodb._tcp.mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"querySrv ECONNREFUSED _mongodb._tcp.mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"bad auth : Authentication failed.error","service":"user-service"}
+{"level":"error","message":"mongodb+srv URI cannot have multiple service nameserror","service":"user-service"}
+{"level":"error","message":"querySrv ENOTFOUND _mongodb._tcp.mapbox.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"queryTxt ESERVFAIL mapboxapp.gtbz8.mongodb.neterror","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://docs.atlas.mongodb.com/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/error","service":"user-service"}
+{"level":"error","message":"Socket 'secureConnect' timed out after 30004ms (connectTimeoutMS: 30000)error","service":"user-service"}
+{"level":"error","message":"Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/error","service":"user-service"}
