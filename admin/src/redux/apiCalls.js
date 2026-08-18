@@ -25,10 +25,10 @@ import {
 } from "./selectUserRedux";
 
 import { 
-  getUserOrdersStart,
-  getUserOrdersSuccess,
-  getUserOrdersFailure
- } from "./ordersRedux.js"
+  getUserTransactionsStart,
+  getUserTransactionsSuccess,
+  getUserTransactionsFailure
+ } from "./transactionsRedux.js";
 
 export const login = async (dispatch, user) => {
   console.log("login request only")
@@ -41,12 +41,14 @@ export const login = async (dispatch, user) => {
     dispatch(loginFailure(err.message));
   }
 };
-
+//these are literally functions of api calls mixed with actions 
+//or "action.type"'s that update state for my app and for redux in the console.
+//Initiations first and then either noting failure or success
 export const getProducts = async (dispatch) => {
-  dispatch(getProductStart());
+  dispatch(getProductStart());//this line updates my reducer/redux console
   try {
-    const res = await publicRequest.get("/products");
-    dispatch(getProductSuccess(res.data));
+    const res = await publicRequest.get("/products"); //requst to api
+    dispatch(getProductSuccess(res.data)); //then we again manually update the reducer/redux console, this time with data
   } catch (err) {
     dispatch(getProductFailure());
   }
@@ -111,16 +113,17 @@ export const updateSelectUser = async (dispatch, user) => {
   }
 };
 
-export const getUserOrders = async(dispatch) => {
-//dispatch action
-  dispatch(getUserOrdersStart())
+export const getAllTransactions = async (dispatch) => { 
+  
+  dispatch(getUserTransactionsStart())
 //contact api..in order to see user orders
 try{
-  const res = await userRequest.get("orders/")
-  dispatch(getUserOrdersSuccess(res.data))
+  const res = await userRequest.get("/orders/");
+  dispatch(getUserTransactionsSuccess(res.data.transactions));
+  console.log(res.data);
 } catch(err){
-  dispatch(getUserOrdersFailure(err.message))
-}
+  dispatch(getUserTransactionsFailure(err.message));
+};
 
 
-}
+};

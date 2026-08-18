@@ -11,8 +11,6 @@ import { getUsers } from "../../redux/apiCalls";
 import { deepOrange } from "@mui/material/colors";
 
 
-
-
 const PREFIX = 'UserList';
 
 const classes = {
@@ -36,6 +34,7 @@ const AvatarComp = styled(Avatar)(({theme})=>({
 
 export default function UserList() {
   const dispatch = useDispatch();
+
   useEffect(()=>{
     getUsers(dispatch);
   },[dispatch]);

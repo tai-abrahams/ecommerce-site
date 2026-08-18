@@ -3,7 +3,7 @@ import userReducer from "./userRedux";
 import productReducer from "./productRedux";
 import usersReducer from "./usersRedux";
 import selectUserReducer from "./selectUserRedux";
-import ordersReducer from "./ordersRedux";
+import transactionsReducer from "./transactionsRedux";
 
 import {
   persistStore,
@@ -30,7 +30,7 @@ const rootReducer = combineReducers({
   users: usersReducer,
   selectUser: selectUserReducer,
   product: productReducer,
-  orders: ordersReducer
+  transactions: transactionsReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

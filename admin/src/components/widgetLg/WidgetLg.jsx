@@ -11,18 +11,29 @@ export default function WidgetLg() {
   const [ orders, setOrders ] = useState([]);
 
   useEffect(()=>{
+    const controller = new AbortController();
         const getOrders = async () =>{
           
           try{
-            const res = await userRequest.get("orders");
+            const res = await userRequest.get("/orders/", {
+              signal:controller.signal
+            });
             setOrders(res.data);
-          } catch(err){ console.error(err)};
-           
+            console.log(res.data)
+          } catch(err){ 
+            if(err.name !== "AbortError" && err.name !== "CanceledError")
+            console.error(err)};
         };
     
 
         getOrders();
+
+        return () =>{
+          controller.abort()
+        }
   },[]);
+
+  
 
   return (
     <div className="widgetLg">
@@ -37,13 +48,14 @@ export default function WidgetLg() {
           </tr>
         </thead>
         
-
+    
         {
-          orders.map((order)=>(
+          
+          orders?.map((order)=>(
             <tbody key={order._id}>
               <tr className="widgetLgTr">
                 <td className="display-flex align-items-center fw-bolder">
-                  <span className="fw-semibold">{order.userId}</span>
+                  <span className="fw-semibold">{order.userId._id}</span>
                 </td>
                 <td className="widgetLgDate">{format(order.createdAt)}</td>
                 <td className="widgetLgAmount">{order.amount}</td>

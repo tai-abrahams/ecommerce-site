@@ -9,7 +9,8 @@ import NewUser from "./pages/newUser/NewUser.jsx";
 import ProductList from "./pages/productList/ProductList.jsx";
 import Product from "./pages/product/Product.jsx";
 import NewProduct from "./pages/newProduct/NewProduct.jsx";
-import OrderList from "./pages/orderList/orderList.tsx";
+import TransactionsList from "./pages/transactionsList/TransactionsList.js"
+//import OrderList from "./pages/orderList/OrderList.tsx";
 import Login from "./pages/login/Login.jsx";
 import { useSelector } from 'react-redux';
 
@@ -75,7 +76,7 @@ function App() {
                   <NewProduct />
                 </Route> 
                 <Route path="/transactions">
-                  <OrderList />
+                  <TransactionsList />
                 </Route>
                 </div>               
               </>

@@ -10,12 +10,12 @@ import { deleteProduct, getProducts } from "../../redux/apiCalls";
 export default function ProductList() {
   //const [data, setData] = useState(productRows);
   const dispatch = useDispatch();
-  const products = useSelector( state =>state.product.products );
+  const products = useSelector( state =>state.product.products ); //??
   
   useEffect(()=>{
-    getProducts(dispatch);
+    getProducts(dispatch); //?? ..this is the api call which i believe is better off being set to state
   }, [dispatch] );
-console.log(products)
+console.log(products) //>?? either we are getting prodcuts from the useSelector above or calling it via the action name
   const handleDelete = (id) => {
     deleteProduct(id, dispatch);
     //setData(data.filter((item) => item.id !== id));

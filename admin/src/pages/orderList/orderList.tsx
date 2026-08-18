@@ -30,7 +30,7 @@ export default function OrderList() {
 useEffect(()=>{
     
     //const [ allOrders, setAllOrders] = useState({});
-    const fetchAllOrders = async () => {//this should be done in my reducer, fetchAllOrders should be an action so that we can do the error handling there not in our useEffect
+    const fetchAllOrders = async () => {//this possibly could be done in my reducer, fetchAllOrders should be an action so that we can do the error handling there not in our useEffect
             try{
                 const res = await userRequest.get('/orders');
                 console.log(res.data)
