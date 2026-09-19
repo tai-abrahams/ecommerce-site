@@ -55,7 +55,9 @@ router.get("/find/:id", verifyTokenAndAuthorization, async (req, res)=>{
     //check id in params matches id in database/req.user
     try{
 
-        const cart = await Cart.findOne({userId:req.params.id});
+        const cart = await Cart.findOne({userId:req.params.id})
+        .populate("products.productId");
+        
         res.status(200).json(cart);
 
     } catch(err){

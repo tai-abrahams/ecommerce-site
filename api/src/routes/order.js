@@ -1,15 +1,22 @@
 const router = require('express').Router();
 const { verifyTokenAndAuthorization, verifyTokenAndAdmin, verifyToken } = require("../middlewares");
 const Order = require("../models/Order");
+const Product = require("../models/Product");
 
 
 //CREATE
 router.post("/", async (req, res)=>{
-    const newOrder = new Order(req.body);
+    //find productId against product schema
+    //const orderReq = req.body;
+    //console.log(req.body.productId);
 
+    
+    //use the found product data to populate the Order schema
+    const newOrder = new Order(req.body);
+    //console.log(product);
     try{
-        const savedOrder = await newOrder.save();
-        res.status(200).json(savedOrder); 
+         const savedOrder = await newOrder.save();
+         res.status(200).json(savedOrder);
     } catch(err){
         res.status(500).json(err)
     }
@@ -39,24 +46,32 @@ router.put("/:id", verifyTokenAndAdmin, async(req, res)=>{
 } )
 
 //DELETE Order
-router.delete("/:id", verifyTokenAndAdmin, async (req, res)=>{
+router.delete("/:_id", verifyTokenAndAdmin, async (req, res)=>{
     //check id in params matches id in database/req.user
+
     try{
-        await Order.findByIdAndDelete(req.params.id);
-        res.status(200).json("Order Deleted");
+        const deleteOrder = await Order.findOneAndDelete({_id:req.params._id});
+        res.status(200).json({deleted:deleteOrder});  
     } catch(err){
-        res.status(500).json(err)
+            res.status(500).json({message:err});
+
     }
+    
+    
 });
 
 
 //get user Orders
-router.get("/find/:id", verifyTokenAndAuthorization, async (req, res)=>{
+router.get("/find/:userId", verifyTokenAndAuthorization, async (req, res)=>{
     //check id in params matches id in database/req.user
     console.log(req.params)
+
     try{
 
-        const orders = await Order.find({userId:req.params.id});
+        const orders = await Order.find({userId:req.params.userId})
+        .populate("userId")
+        .populate("products.productId")
+        .lean();
         res.status(200).json(orders);
 
     } catch(err){
@@ -68,13 +83,19 @@ router.get("/find/:id", verifyTokenAndAuthorization, async (req, res)=>{
 
 router.get("/", verifyTokenAndAdmin, async (req, res)=>{
     try{
-        const orders = await Order.find();
+        const orders = await Order.find()
+        .populate('userId')
+        .populate('products.productId');
+        
         
         // const formattedOrders = orders.map(({_id, ...others})=>({
         //     'id':_id,
         //     ...others
-        // }))
-        res.status(200).json(orders)
+        // }));
+
+        // console.log(formattedOrders);
+        res.status(200).json(orders);
+        
         //console.log(formattedOrders) //use mongoose virtuals instead + remove .lean()
     } catch(err){
         res.status(500).json(err);

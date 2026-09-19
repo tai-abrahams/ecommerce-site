@@ -23,6 +23,12 @@ const logger = winston.createLogger({
     new winston.transports.Console({ filename: 'combined.log' }),
   ],
 });
+const corsOptions = [
+  {
+    origin: (process.env.CORS_ORIGIN && process.env.CORS_ORIGIN2)
+  },
+
+]
 
 mongoose.connect(
     DBURL).then(
@@ -34,8 +40,9 @@ mongoose.connect(
 
 
 app.use(express.json());
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN,
+  origin: corsOptions,
 }));
 
 app.use('/api/auth', authRoute);
@@ -43,7 +50,6 @@ app.use('/api/users', userRoute);
 app.use('/api/products', productRoute);
 app.use('/api/orders', ordersRoute);
 app.use('/api/cart', cartRoute);
-
 app.use('/api/checkout', stripeRoute);
 
 
