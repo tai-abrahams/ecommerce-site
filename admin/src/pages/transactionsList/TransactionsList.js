@@ -4,7 +4,8 @@ import { useEffect, useState, } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userRequest } from "../../requestMethods";
 import { getAllTransactions } from "../../redux/apiCalls";
-import { Avatar, AvatarGroup } from "@mui/material";
+import { Avatar, AvatarGroup, Badge } from "@mui/material";
+import { border, display } from "@mui/system";
 
 
 
@@ -12,6 +13,7 @@ export default function TransactionsList() {
     
     //const transactions = useSelector((state)=> state.transactions);
     // console.log(transactions)
+
     const [ transactions, setTransactions ] = useState([])
     
     useEffect( ()=>{
@@ -45,37 +47,63 @@ export default function TransactionsList() {
             {
                 field:"products",
                 headerName:"Products",
-                width: "200px",
+                width: 200,
                 renderCell:(params)=>{
                     console.log("Cell Row Data:", params.row);
                     console.log("Products Array:", params.row?.products);
                     const products = params.row?.products || [];
+                   
 
-                    // if(!Array.isArray(products) || products.length === 0){
-                    //     return <span>"no products"</span>;
-                    // };
+                    if(!Array.isArray(products) || products.length === 0){
+                        return <span>"no products"</span>;
+                    };
                         return (
-                            //<AvatarGroup max={4} sx={{ display:'flex',alignItems:'center',height:"100%"}}>
-                            <div style={{display:"flex",gap:4,alignItems:"center"}}>
+                            <AvatarGroup 
+                                max={1} 
+                                sx={{ 
+                                    display:'flex',
+                                    alignItems:'center',
+                                    height:"100%",
+                                    "& .MuiAvatar-root":
+                                        {
+                                            marginLeft:"0px", 
+                                            marginRight:"10px"
+                                        }
+                                    }}
+                            >
+                            
                                 { products.map((item,index)=>{
-                                    // const imgUrl = item?.productId?.img;
-                                    // const imgKey = item?._id;
-                                    const product = item?.productId?.img || item?.img;
+                                    const imgUrl = item?.productId?.img;
+                                    const imgKey = item?._id;
+                                    //const product = item?.productId?.img || item?.img;
                                     return(
-                                        <div key={index} style={{border:"1px solid black"}}>
-                                            <Avatar 
-                                                // key={imgKey || index} 
-                                                // src={imgUrl}
-                                                // alt={`Product ${index +1}`}
-                                                src={product}
-                                            >
-                                                {index +1}
+                                        <div key={index} className="transactionAvatar">
+                                            <Badge 
+                                                badgeContent={item.quantity} 
+                                                sx={{
+                                                    '& .MuiBadge-badge':
+                                                        {
+                                                            backgroundColor:"#00c3cb", 
+                                                            color:"white",
+                                                            right:"30%",
+                                                            top:"70%"
+                                                        }
+                                                    }}
+                                                >
+                                                <Avatar 
+                                                    key={imgKey || index} 
+                                                    src={imgUrl}
+                                                    alt={`Product ${index +1}`}
+                                                    
+                                                >
+                                                    {index +1}
                                                 </Avatar>
+                                            </Badge>
                                         </div>
                                     )
                                 })}
-                            </div>
-                            //</AvatarGroup>
+                            
+                            </AvatarGroup>
                         )
                     
                 }
@@ -91,15 +119,6 @@ export default function TransactionsList() {
             {field:"view"}
         ]
     
-    
-    console.log(transactions)
-
-    const transactionsProducts = transactions?.map((transaction)=>{
-        return transaction.products;
-    });
-
-    console.log(transactionsProducts)
-
     return(
         <div className="transactionList">
             <DataGrid 

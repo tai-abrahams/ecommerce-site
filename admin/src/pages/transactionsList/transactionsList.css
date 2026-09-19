@@ -15,4 +15,11 @@
     flex:4;
     border: 1px solid red;
     width:fit-content;
+};
+
+.transactionAvatar{
+    display:flex;
+    align-items: left;
+    border: 1px solid green;
+    margin-left:50px;
 }
