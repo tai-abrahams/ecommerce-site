@@ -8,7 +8,7 @@ router.post("/create-product", async (req, res)=>{
     try{
         const { productName, desc, images} = req.body;
         const product = await stripe.products.create({
-            name: `${productName}`,
+            name: productName,
             description: desc,
             images: images
         });
